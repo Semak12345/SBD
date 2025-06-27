@@ -1,75 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SBD</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    nav {
-      background-color: #111;
-      padding: 1em;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 999;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5em;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 100px 20px;
-      margin-top: 60px;
-    }
-    #about {
-      background: #f2f2f2;
-    }
-  </style>
-</head>
-<body>
+"use client";
 
-  <nav>
-    <ul>
-      <li><a href="#about">SBD</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#music">Music</a></li>
-    </ul>
-  </nav>
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Button from "@/components/ui/button";
 
-  <section id="about">
-    <h2>About SBD</h2>
-    <p>
-      SBD — это авторская цифровая экосистема нового культурного и цифрового движения, где каждое направление связано одной философией: самобытность, дерзость, влияние.
-    </p>
-  </section>
+export default function SBDHome() {
+  const [isReady, setIsReady] = useState(false);
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Тут будут проекты...</p>
-  </section>
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
 
-  <section id="music">
-    <h2>Music</h2>
-    <p>Тут будет музыка...</p>
-  </section>
+  if (!isReady) return null;
 
-</body>
-</html>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex flex-col items-center justify-center px-4 text-center">
+      <div className="w-full max-w-2xl py-16">
+        <h1 className="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight leading-tight bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
+          SBD
+        </h1>
+
+        <div className="mb-10">
+          <Image
+            src="/ChatGPT Image 27 июн. 2025 г., 07_55_57.png"
+            alt="SBD Illustration"
+            width={1000}
+            height={500}
+            className="rounded-2xl border border-zinc-700"
+          />
+        </div>
+
+        <p className="text-lg md:text-xl text-zinc-400 mb-10">
+          Цифровой авангард в действии — <a href="https://t.me/SBDishka" className="underline text-cyan-400" target="_blank" rel="noopener noreferrer">@SBDishka</a>
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <Link href="/projects" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">📂 Проекты</h3>
+            <p className="text-zinc-400">Web3 продукты и инструменты SBD</p>
+          </Link>
+
+          <Link href="/portfolio" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">🧠 Портфолио</h3>
+            <p className="text-zinc-400">Дропы, проекты, кейсы</p>
+          </Link>
+
+          <Link href="/music" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">🎧 Музыка</h3>
+            <p className="text-zinc-400">Звук и вайб цифрового подполья</p>
+          </Link>
+        </div>
+
+        <div className="mt-12">
+          <Button asChild className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-lg px-6 py-3 rounded-xl">
+            <a href="https://t.me/SBDishka" target="_blank" rel="noopener noreferrer">
+              Войти в штаб
+            </a>
+          </Button>
+        </div>
+
+        <footer className="mt-16 text-sm text-zinc-600">
+          © {new Date().getFullYear()} SBD. Сделано с уважением к абстракции 🌀
+        </footer>
+      </div>
+    </div>
+  );
+}
