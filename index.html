@@ -1,69 +1,171 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SBD</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: monospace;
-      margin: 0;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-      background-color: #111;
-      border-bottom: 1px solid #333;
-    }
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #00ffff;
-    }
-    nav a {
-      margin-left: 1.5em;
-      text-decoration: none;
-      color: #ccc;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00ffff;
-    }
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">SBD</div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="music.html">Music</a>
-    </nav>
-  </header>
-  <main>
-    <h1>SBD</h1>
-    <p>Добро пожаловать на официальный сайт канала <a href="https://t.me/SBDishka" target="_blank">@SBDishka</a></p>
-  </main>
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 14a097aff8138d882a09f742d2c15a46b7eb12c2..8b2d554b2cbd970638bedfc83897e8b29c220a75 100644
+--- a/index.html
++++ b/index.html
+@@ -1,69 +1,99 @@
+-"use client";
+-
+-import Image from "next/image";
+-import Link from "next/link";
+-import { useEffect, useState } from "react";
+-import Button from "@/components/ui/button";
+-
+-export default function SBDHome() {
+-  const [isReady, setIsReady] = useState(false);
+-
+-  useEffect(() => {
+-    setIsReady(true);
+-  }, []);
+-
+-  if (!isReady) return null;
+-
+-  return (
+-    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex flex-col items-center justify-center px-4 text-center">
+-      <div className="w-full max-w-2xl py-16">
+-        <h1 className="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight leading-tight bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
+-          SBD
+-        </h1>
+-
+-        <div className="mb-10">
+-          <Image
+-            src="/ChatGPT Image 27 июн. 2025 г., 07_55_57.png"
+-            alt="SBD Illustration"
+-            width={1000}
+-            height={500}
+-            className="rounded-2xl border border-zinc-700"
+-          />
+-        </div>
+-
+-        <p className="text-lg md:text-xl text-zinc-400 mb-10">
+-          Цифровой авангард в действии — <a href="https://t.me/SBDishka" className="underline text-cyan-400" target="_blank" rel="noopener noreferrer">@SBDishka</a>
+-        </p>
+-
+-        <div className="flex flex-col md:flex-row gap-6 justify-center">
+-          <Link href="/projects" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+-            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">📂 Проекты</h3>
+-            <p className="text-zinc-400">Web3 продукты и инструменты SBD</p>
+-          </Link>
+-
+-          <Link href="/portfolio" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+-            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">🧠 Портфолио</h3>
+-            <p className="text-zinc-400">Дропы, проекты, кейсы</p>
+-          </Link>
+-
+-          <Link href="/music" className="group relative block bg-zinc-900 border border-zinc-700 px-8 py-6 rounded-2xl hover:border-fuchsia-500 transition">
+-            <h3 className="text-2xl font-semibold mb-1 group-hover:text-fuchsia-400">🎧 Музыка</h3>
+-            <p className="text-zinc-400">Звук и вайб цифрового подполья</p>
+-          </Link>
+-        </div>
+-
+-        <div className="mt-12">
+-          <Button asChild className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white text-lg px-6 py-3 rounded-xl">
+-            <a href="https://t.me/SBDishka" target="_blank" rel="noopener noreferrer">
+-              Войти в штаб
+-            </a>
+-          </Button>
+-        </div>
+-
+-        <footer className="mt-16 text-sm text-zinc-600">
+-          © {new Date().getFullYear()} SBD. Сделано с уважением к абстракции 🌀
+-        </footer>
++<!DOCTYPE html>
++<html lang="ru">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>SBD</title>
++  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
++  <style>
++    body {
++      margin: 0;
++      font-family: 'Poppins', sans-serif;
++      background: linear-gradient(135deg, #000, #111);
++      color: #fff;
++      text-align: center;
++    }
++    .container {
++      padding: 2rem;
++      max-width: 1000px;
++      margin: 0 auto;
++    }
++    h1 {
++      font-size: 4rem;
++      margin-bottom: 0.5em;
++      background: linear-gradient(90deg, #f0f, #0ff);
++      -webkit-background-clip: text;
++      -webkit-text-fill-color: transparent;
++    }
++    a {
++      color: #0ff;
++      text-decoration: none;
++    }
++    .nav {
++      margin-bottom: 2rem;
++    }
++    .cards {
++      display: flex;
++      flex-wrap: wrap;
++      gap: 1rem;
++      justify-content: center;
++      margin-top: 2rem;
++    }
++    .card {
++      background: #111;
++      border: 1px solid #333;
++      border-radius: 0.5rem;
++      padding: 1.5rem;
++      width: 250px;
++      transition: border-color 0.3s;
++    }
++    .card:hover {
++      border-color: #f0f;
++    }
++    .footer {
++      margin-top: 4rem;
++      color: #666;
++      font-size: 0.9rem;
++    }
++    button {
++      background: #f0f;
++      color: #fff;
++      border: none;
++      padding: 1rem 2rem;
++      font-size: 1rem;
++      border-radius: 0.5rem;
++      cursor: pointer;
++    }
++    button:hover {
++      background: #e00bff;
++    }
++  </style>
++</head>
++<body>
++  <div class="container">
++    <h1>SBD</h1>
++    <p>Цифровой авангард в действии — <a href="https://t.me/SBDishka" target="_blank">@SBDishka</a></p>
++    <div class="nav">
++      <a href="about.html">О нас</a>
++    </div>
++    <div class="cards">
++      <div class="card">
++        <h3>📂 Проекты</h3>
++        <p>Web3 продукты и инструменты SBD</p>
++      </div>
++      <div class="card">
++        <h3>🧠 Портфолио</h3>
++        <p>Дропы, проекты, кейсы</p>
+       </div>
++      <div class="card">
++        <h3>🎧 Музыка</h3>
++        <p>Звук и вайб цифрового подполья</p>
++      </div>
++    </div>
++    <div class="join" style="margin-top:2rem;">
++      <a href="https://t.me/SBDishka" target="_blank"><button>Войти в штаб</button></a>
+     </div>
+-  );
+-}
++    <div class="footer">© 2025 SBD. Сделано с уважением к абстракции 🌀</div>
++  </div>
++</body>
++</html>
