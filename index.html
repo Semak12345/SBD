@@ -9,12 +9,37 @@
       background-color: black;
       color: white;
       font-family: monospace;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: #111;
+      border-bottom: 1px solid #333;
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #00ffff;
+    }
+    nav a {
+      margin-left: 1.5em;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ffff;
+    }
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
+      min-height: 80vh;
       text-align: center;
     }
     h1 {
@@ -24,40 +49,21 @@
     a {
       color: #00ffff;
       text-decoration: none;
-      font-weight: bold;
-    }
-    .links {
-      margin-top: 2em;
-    }
-    .links a {
-      display: block;
-      margin: 0.5em 0;
     }
   </style>
 </head>
 <body>
-  <h1>SBD</h1>
-  <p>Добро пожаловать на официальный сайт канала <a href="https://t.me/SBDishka" target="_blank">@SBDishka</a></p>
-
-  <div class="links">
-    <a href="#projects">Проекты</a>
-    <a href="#portfolio">Портфолио</a>
-    <a href="#music">Музыка</a>
-  </div>
-
-  <div id="projects" class="links">
-    <h2>Проекты</h2>
-    <p>Информация о текущих и будущих проектах появится скоро.</p>
-  </div>
-
-  <div id="portfolio" class="links">
-    <h2>Портфолио</h2>
-    <p>Здесь будут размещены кейсы и достижения команды SBD.</p>
-  </div>
-
-  <div id="music" class="links">
-    <h2>Музыка</h2>
-    <p>Следи за нашим Telegram-каналом для свежих треков и новинок.</p>
-  </div>
+  <header>
+    <div class="logo">SBD</div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="music.html">Music</a>
+    </nav>
+  </header>
+  <main>
+    <h1>SBD</h1>
+    <p>Добро пожаловать на официальный сайт канала <a href="https://t.me/SBDishka" target="_blank">@SBDishka</a></p>
+  </main>
 </body>
 </html>
